@@ -17,7 +17,12 @@ class Point2D:
     #def __iadd__(self, other: Vector) -> None:
     #    self._coordinates += other
     #    return self
-
+    # Task A: implement in-place addition to support `point += Vector([...])`
+    def __iadd__(self, other: Vector) -> Point2D:
+        for i in range(2):  # 2D coordinates
+            self._coordinates[i] += other[i]
+        return self
+    
 def test_point_construction() -> None:
     point = Point2D(1.0, 42.0)
     assert point.x == 1.0
@@ -38,3 +43,4 @@ def test_point_vector_subtraction() -> None:
     point -= Vector([1.1, 2.2])
     assert isclose(point.x, -0.1)
     assert isclose(point.y, -0.2)
+
