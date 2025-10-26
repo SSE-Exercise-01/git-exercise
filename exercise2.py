@@ -23,6 +23,11 @@ class Point2D:
             self._coordinates[i] += other[i]
         return self
     
+    #Solution for Task B
+    def __isub__(self, other: Vector) -> Point2D:
+        self._coordinates = self._coordinates - other
+        return self
+
 def test_point_construction() -> None:
     point = Point2D(1.0, 42.0)
     assert point.x == 1.0
