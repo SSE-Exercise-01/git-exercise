@@ -14,6 +14,15 @@ class Point2D:
     def y(self) -> float:
         return self._coordinates[1]
 
+    #def __iadd__(self, other: Vector) -> None:
+    #    self._coordinates += other
+    #    return self
+    # Task A: implement in-place addition to support `point += Vector([...])`
+    def __iadd__(self, other: Vector) -> Point2D:
+        for i in range(2):  # 2D coordinates
+            self._coordinates[i] += other[i]
+        return self
+    
     #Solution for Task B
     def __isub__(self, other: Vector) -> Point2D:
         self._coordinates = self._coordinates - other
