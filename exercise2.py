@@ -14,9 +14,10 @@ class Point2D:
     def y(self) -> float:
         return self._coordinates[1]
 
-    #def __iadd__(self, other: Vector) -> None:
-    #    self._coordinates += other
-    #    return self
+    #Solution for Task B
+    def __isub__(self, other: Vector) -> Point2D:
+        self._coordinates = self._coordinates - other
+        return self
 
 def test_point_construction() -> None:
     point = Point2D(1.0, 42.0)
@@ -38,3 +39,4 @@ def test_point_vector_subtraction() -> None:
     point -= Vector([1.1, 2.2])
     assert isclose(point.x, -0.1)
     assert isclose(point.y, -0.2)
+
