@@ -30,8 +30,13 @@ class Rectangle:
         # Task A: remove duplication by defining a function
         #         that checks if a value is within an interval
         #         and reuse that here.
+        def is_in_interval(value: float, start: float, end: float) -> bool:
+            return start <= value <= end
+
         ll_px = point.x - self._lower_left.x
-        ll_py = point.y - self._lower_left.y
+        
+        # Combined Task A and Task B logic
+        return is_in_interval(ll_px, -tolerance, self._dx + tolerance) and is_in_interval(ll_py, -tolerance, self._dy + tolerance)
 
         # Task B logic:
         x_in = (ll_px >= -tolerance) and (ll_px <= self._dx + tolerance)
