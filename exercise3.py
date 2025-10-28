@@ -37,7 +37,7 @@ class Rectangle:
         x_in = (ll_px >= -tolerance) and (ll_px <= self._dx + tolerance)
         y_in = (ll_py >= -tolerance) and (ll_py <= self._dy + tolerance)
         return x_in and y_in
-
+    
     def _is_idx_on_upper_edge(self, i: int) -> bool:
         return i in [2, 3]
     
